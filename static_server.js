@@ -41,7 +41,7 @@ var server = http.createServer(function(request, response){
     if(file !== undefined){
         response.statusCode = 200
         response.setHeader('Content-Type', `${mimeHashList[path.substr(path.lastIndexOf(".") + 1).toLowerCase()]};charset=utf-8`)
-        response.write(fs.readFileSync(`public/${pathname}`))
+        response.write(file)
         response.end()
     }
     
